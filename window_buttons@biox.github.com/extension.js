@@ -231,12 +231,8 @@ WindowButtons.prototype = {
         let pinch = this._settings.get_enum(WA_PINCH);
         let order = _ORDER_DEFAULT;
 
-        if (pinch === PinchType.METACITY) {
-            order = getMetaButtonLayout();
-        } else if (pinch === PinchType.GNOME_SHELL) { // same as the old PinchType.MUTTER
-            order = Gio.Settings.new('org.gnome.shell.overrides').get_string(
-                    'button-layout');
-        }
+        order = getMetaButtonLayout();
+        
         /* if order is null because keys don't exist, get them from settings
          * (PinchType.CUSTOM) */
         if (pinch === PinchType.CUSTOM || !order || !order.length) {
