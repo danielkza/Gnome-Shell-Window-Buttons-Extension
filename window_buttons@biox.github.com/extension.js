@@ -405,7 +405,10 @@ WindowButtons.prototype = {
             // No windows are active, control the uppermost window on the
             // current workspace
             if (windows.length) {
-                win = windows[windows.length - 1].get_meta_window();
+                win = windows[windows.length - 1];
+                if(!('get_maximized' in win)) {
+                    win = win.get_meta_window();
+                }
             }
         }
 
