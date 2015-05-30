@@ -2,23 +2,27 @@
 UUID=window_buttons@danielkza.github.com
 FILES=metadata.json *.js stylesheet.css schemas themes
 #=============================================================================
-default_target: all
-.PHONY: clean all zip
+
+all: .all
+.all: $(UUID)/schemas/gschemas.compiled $(addprefix $(UUID)/,$(FILES))
+	touch .all
+
+.PHONY: clean all zip dev-zip
 
 clean:
-	@rm -f $(UUID).zip $(UUID)/schemas/gschemas.compiled
+	@rm -f .all $(UUID).zip $(UUID)-release.zip $(UUID)/schemas/gschemas.compiled
 
-# compile the schemas
-all: clean
-	@if [ -d $(UUID)/schemas ]; then \
-		glib-compile-schemas $(UUID)/schemas; \
-	fi
+$(UUID)/schemas/gschemas.compiled: $(UUID)/schemas/*.gschema.xml
+	glib-compile-schemas $(UUID)/schemas
 
 # to put on the Downloads page
-zip: all
-	zip -rq $(UUID).zip $(FILES:%=$(UUID)/%)
+$(UUID)-release.zip: .all
+	zip -rq $(UUID)-release.zip $(FILES:%=$(UUID)/%)
+
+zip: $(UUID)-release.zip
 
 # to upload to e.g.o
-dev-zip: all
-	(cd $(UUID); \
-		zip -rq ../$(UUID).zip $(FILES))
+$(UUID).zip: .all
+	(cd $(UUID); zip -rq ../$(UUID).zip $(FILES))
+
+dev-zip: $(UUID).zip
