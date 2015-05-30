@@ -17,6 +17,7 @@ const GConf = imports.gi.GConf;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const Gtk = imports.gi.Gtk;
 const Mainloop = imports.mainloop;
 const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
@@ -177,7 +178,11 @@ WindowButtons.prototype = {
             doMetacity = this._settings.get_boolean(WA_DO_METACITY);
 
         if (doMetacity) {
-            theme = Meta.prefs_get_theme();
+            try {
+                theme = Gtk.Settings.get_default().gtk_theme_name;
+            } catch(err) {
+                theme = Meta.prefs_get_theme();
+            }
         } else {
             theme = this._settings.get_string(WA_THEME);
         }
@@ -203,11 +208,10 @@ WindowButtons.prototype = {
             currentTheme = themeContext.get_theme();
         if (oldtheme) {
             // unload the old style
-            currentTheme.unload_stylesheet(oldtheme);
+            currentTheme.unload_stylesheet(Gio.file_new_for_path(oldtheme));
         }
         // load the new style
-        currentTheme.load_stylesheet(cssPath);
-
+        currentTheme.load_stylesheet(Gio.file_new_for_path(cssPath));
         // The following forces the new style to reload (it may not be the only
         // way to do it; running the cursor over the buttons works too)
         this.rightActor.grab_key_focus();
