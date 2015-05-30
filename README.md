@@ -5,7 +5,7 @@ Supports custom button layouts and css theming!
 
 <table>
   <tr>
-    <td><img src="https://raw.github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/gnome3.4/screenshot.png" alt="Screenshot" /></td>
+    <td><img src="https://raw.github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/master/screenshot.png" alt="Screenshot" /></td>
   </tr>
   <tr>
     <td>Current (06/Jun/2013) themes, top-to-bottom: Ambiance-Blue, Ambiance, default, Radiance, UniMetro-Black, UniMetro, Zukitwo-Dark, Zukitwo</td>
@@ -14,28 +14,28 @@ Supports custom button layouts and css theming!
 
 Configure with `gnome-shell-extension-prefs` or GNOME Tweak Tool.
 
-**Author**: biox (Josiah Messiah)   
-**Maintainers**: mathematical.coffee <mathematical.coffee@gmail.com>
-                 Daniel Miranda <danielkza2@gmail.com> 
-**Contributors**: [Many (thankyou!)](https://github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/contributors)
+**Original Author**: biox (Josiah Messiah)  
+**Maintainer**: Daniel Miranda <danielkza2@gmail.com>  
+**Previous Maintainer**: mathematical.coffee <mathematical.coffee@gmail.com>  
+**Contributors**: [Many (thankyou!)](https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/contributors)
 
 Installation
 ------------
-**NEW**: Install it from [extensions.gnome.org](https://extensions.gnome.org/extension/426/window-buttons/).
+Install it from [extensions.gnome.org](https://extensions.gnome.org/extension/960/window-buttons/).
 
-If you wish to install manually (i.e. from the repository, as Github no longer has download pages):
+If you wish to install manually, follow the steps below.
 
 ### GNOME 3.12-3.16
 
-Checkout the master branch, then do:
+Checkout the master branch, by doing:
 
 ```bash
 git clone https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension.git
 cd Gnome-Shell-Window-Buttons-Extension
 git checkout master
 make # <-- very important!
-# copy to extensions directory
-cp -r window_buttons@danielkza.github.com ~/.local/share/gnome-shell/extensions
+# symlink to extensions directory
+ln -s "$PWD/window_buttons@danielkza.github.com" ~/.local/share/gnome-shell/extensions
 # install
 gnome-shell-extension-tool -e window_buttons@danielkza.github.com 
 ```
