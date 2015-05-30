@@ -12,13 +12,12 @@ Supports custom button layouts and css theming!
   </tr>
 </table>
 
-Configure with `gnome-shell-extension-prefs` (GNOME 3.4+) or by editing `extension.js` (GNOME 3.2).
+Configure with `gnome-shell-extension-prefs` or GNOME Tweak Tool.
 
 **Author**: biox (Josiah Messiah)   
-**Maintainers**: mathematical.coffee <mathematical.coffee@gmail.com>   
+**Maintainers**: mathematical.coffee <mathematical.coffee@gmail.com>
+                 Daniel Miranda <danielkza2@gmail.com> 
 **Contributors**: [Many (thankyou!)](https://github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/contributors)
-
-Note - the [mathematicalcoffee fork](https://github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension) of this extension is where development happens, and it all then gets pushed to the original [biox repository](https://github.com/biox/Gnome-Shell-Window-Buttons-Extension) when stable.
 
 Installation
 ------------
@@ -26,29 +25,24 @@ Installation
 
 If you wish to install manually (i.e. from the repository, as Github no longer has download pages):
 
-### GNOME 3.4, 3.6, 3.8
-Checkout the code to the `gnome3.4` branch:
+### GNOME 3.12-3.16
 
-    git clone https://github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension.git
-    cd Gnome-Shell-Window-Buttons-Extension
-    git checkout gnome3.4
-    make # <-- very important!
-    # copy to extensions directory
-    cp -r window_buttons@biox.github.com ~/.local/share/gnome-shell/extensions
-    # install
-    gnome-shell-extension-tool -e window_buttons@biox.github.com 
+Checkout the master branch, then do:
 
-Now restart gnome-shell and enable the extension in `gnome-tweak-tool`.
-Configure using `gnome-shell-extension-prefs`.
+```bash
+git clone https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension.git
+cd Gnome-Shell-Window-Buttons-Extension
+git checkout master
+make # <-- very important!
+# copy to extensions directory
+cp -r window_buttons@danielkza.github.com ~/.local/share/gnome-shell/extensions
+# install
+gnome-shell-extension-tool -e window_buttons@danielkza.github.com 
+```
 
-### GNOME 3.2
-As above (but if you are checking out the code, use the `gnome3.2` branch).
+### Other GNOME versions
 
-You will also have to add `'window_buttons@biox.github.com'` to the `org.gnome.shell enabled-extensions` key.
-
-**NOTE**: previous versions of this extension allowed you to copy a settings file to `/usr/share` to configure the extension with `dconf-editor`; this has been discontinued because the extension won't pass review on https://extensions.gnome.org if it asks you to do anything requiring root access like that.
-
-You must configure by editing the `extension.js` file. You have to gnome-shell after making changes to `extension.js`.
+No longer supported, sorry!
 
 Configuration
 -------------
@@ -79,7 +73,7 @@ There are two settings that control what theme is used: `doMetacity` and `theme`
 
 If `doMetacity` is set to `true`, window buttons will use whatever theme is in `/apps/metacity/general/theme` (if we have a matching theme). Otherwise, we we will use the `theme` setting to determine which theme to use.
 
-Themes are stored in the `themes` directory of this extension, for example `~/.local/share/gnome-shell/extensions/window_butons@biox.github.com/themes`.
+Themes are stored in the `themes` directory of this extension, for example `~/.local/share/gnome-shell/extensions/window_butons@danielkza.github.com/themes`.
 You must set the `theme` to one of these names.
 For further details see the 'Themes' section below.
 
@@ -97,27 +91,7 @@ You can change this with the `showbuttons` setting.
 ### Positioning the buttons in the panel
 Recall you can position the left and right groups of buttons separately (determined by the colon ':' in `order`).
 
-If you use GNOME 3.4, use `gnome-shell-extension-prefs` for the positioning - it's easier.
-
-If you use GNOME 3.2, it's a little more confusing. See the following from `extension.js`.
-
-    const buttonPosition = {
-        left: {
-            // Position of the left group of buttons (if any). Change as you like.
-            // Default: between the activities bar and the app menu, i.e. second
-            //  item from the left in the left box.
-            box: Boxes.LEFT,
-            position: 2
-        },
-
-        right: {
-            // Position of the right group of buttons (if any). Change as you like.
-            // Default: after the title bar as far right as possible, i.e. the first
-            // item from the left in the right box.
-            box: Boxes.RIGHT,
-            position: 1
-        }
-    };
+Use `gnome-shell-extension-prefs` for the positioning - it's easier.
 
 The position of a button group is determined by two factors: what *box* it is in, and what *position* it has *within that box*.
 
@@ -133,8 +107,6 @@ The position is a number representing whereabouts in the box you want the button
 
 For example `1` means 'first item from the left', `2` means 'second item from the left' and so on. If you want to anchor from the right, use a negative number: `-1` means 'first item from the right' and so on.
 
-More examples are in `extension.js` (for GNOME 3.2).
-
 Themes
 ------
 The Window Buttons extension is themeable.
@@ -143,7 +115,7 @@ Themes live in the `themes`. The name of the directory is the name of the theme.
 If you want to make your own theme, you have to add a folder into the `themes` directory.
 To start off, copy the `default` theme:
 
-    cd window_buttons@biox.github.com/themes
+    cd window_buttons@danielkza.github.com/themes
     cp -r default my_new_theme 
 
 Then, edit the `style.css` file to style the window buttons. 
@@ -163,12 +135,16 @@ Also, feel free to add a file `ABOUT` with credits/information.
 
 (The 'screenshot.png' image displayed on this readme was generated using ImageMagick:
 
-    convert -background black -gravity center -append `find window_buttons@biox.github.com/themes -iname screenshot.png | sort` screenshot.png
+    convert -background black -gravity center -append `find window_buttons@danielkza.github.com/themes -iname screenshot.png | sort` screenshot.png
 
 )
 
 Changelog
 ---------
+v20 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 2.4)
+
+* fix compatibility with GNOME 3.16
+
 v11 on e.g.o (GNOME 3.8), dev-version 2.3.1:
 
 * fix bug where activities button would drift to the right upon lock/unlock (#18)

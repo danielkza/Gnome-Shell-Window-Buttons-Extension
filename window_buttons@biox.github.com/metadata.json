@@ -1,9 +1,9 @@
 {
-  "shell-version": ["3.4", "3.6", "3.8", "3.10", "3.12", "3.14"],
-  "uuid": "window_buttons@biox.github.com",
+  "shell-version": ["3.12", "3.14", "3.16"],
+  "uuid": "window_buttons@danielkza.github.com",
   "name": "Window Buttons",
-  "description": "Add minimize, maximize and close buttons to the panel. Originally by Josiah Messiah, maintained by m.c. See homepage for instructions.",
-  "url": "https://github.com/biox/Gnome-Shell-Window-Buttons-Extension",
+  "description": "Add minimize, maximize and close buttons to the panel. Originally by Josiah Messiah, maintained by m.c, then danielkza. See homepage for instructions.",
+  "url": "https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension",
   "settings-schema": "org.gnome.shell.extensions.window-buttons",
-  "dev-version": "2.3_gnome3.4+"
+  "dev-version": "2.4"
 }

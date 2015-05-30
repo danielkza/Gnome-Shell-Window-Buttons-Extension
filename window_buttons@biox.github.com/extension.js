@@ -9,6 +9,7 @@
  * - tiper <https://github.com/tiper>
  * - mathematical.coffee <mathematical.coffee@gmail.com>
  * - cjclavijo
+ * - Daniel Miranda <danielkza2@gmail.com>
  */
 
 const Lang = imports.lang;
@@ -208,10 +209,21 @@ WindowButtons.prototype = {
             currentTheme = themeContext.get_theme();
         if (oldtheme) {
             // unload the old style
-            currentTheme.unload_stylesheet(Gio.file_new_for_path(oldtheme));
+            try {
+                currentTheme.unload_stylesheet(oldtheme);
+            } catch(err) {
+                // GNOME 3.16
+                currentTheme.unload_stylesheet(Gio.file_new_for_path(oldtheme));
+            }
         }
         // load the new style
-        currentTheme.load_stylesheet(Gio.file_new_for_path(cssPath));
+        try {
+            currentTheme.load_stylesheet(cssPath);
+        } catch(err) {
+            // GNOME 3.16
+            currentTheme.load_stylesheet(Gio.file_new_for_path(cssPath));
+        }
+
         // The following forces the new style to reload (it may not be the only
         // way to do it; running the cursor over the buttons works too)
         this.rightActor.grab_key_focus();
