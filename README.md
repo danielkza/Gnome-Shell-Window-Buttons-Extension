@@ -36,9 +36,9 @@ git checkout master
 make # <-- very important!
 # symlink to extensions directory
 mkdir -p ~/.local/share/gnome-shell/extensions
-ln -s "$PWD/window_buttons@danielkza.github.com" ~/.local/share/gnome-shell/extensions/
+ln -s "$PWD/window_buttons@biox.github.com" ~/.local/share/gnome-shell/extensions/
 # install
-gnome-shell-extension-tool -e window_buttons@danielkza.github.com 
+gnome-shell-extension-tool -e window_buttons@biox.github.com 
 ```
 
 ### Other GNOME versions
@@ -73,7 +73,7 @@ There are two settings that control what theme is used: `doMetacity` and `theme`
 
 If `doMetacity` is set to `true`, window buttons will use whatever theme is in `/apps/metacity/general/theme` (if we have a matching theme). Otherwise, we we will use the `theme` setting to determine which theme to use.
 
-Themes are stored in the `themes` directory of this extension, for example `~/.local/share/gnome-shell/extensions/window_butons@danielkza.github.com/themes`.
+Themes are stored in the `themes` directory of this extension, for example `~/.local/share/gnome-shell/extensions/window_butons@biox.github.com/themes`.
 You must set the `theme` to one of these names.
 For further details see the 'Themes' section below.
 
@@ -115,7 +115,7 @@ Themes live in the `themes`. The name of the directory is the name of the theme.
 If you want to make your own theme, you have to add a folder into the `themes` directory.
 To start off, copy the `default` theme:
 
-    cd window_buttons@danielkza.github.com/themes
+    cd window_buttons@biox.github.com/themes
     cp -r default my_new_theme 
 
 Then, edit the `style.css` file to style the window buttons. 
@@ -135,13 +135,13 @@ Also, feel free to add a file `ABOUT` with credits/information.
 
 (The 'screenshot.png' image displayed on this readme was generated using ImageMagick:
 
-    convert -background black -gravity center -append `find window_buttons@danielkza.github.com/themes -iname screenshot.png | sort` screenshot.png
+    convert -background black -gravity center -append `find window_buttons@biox.github.com/themes -iname screenshot.png | sort` screenshot.png
 
 )
 
 Changelog
 ---------
-v20 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 2.4)
+v12 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 2.4)
 
 * fix compatibility with GNOME 3.16
 

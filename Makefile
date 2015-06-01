@@ -1,5 +1,5 @@
 #=============================================================================
-UUID=window_buttons@danielkza.github.com
+UUID=window_buttons@biox.github.com
 FILES=metadata.json *.js stylesheet.css schemas themes
 #=============================================================================
 
