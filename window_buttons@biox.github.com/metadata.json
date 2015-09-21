@@ -1,5 +1,5 @@
 {
-  "shell-version": ["3.12", "3.14", "3.16"],
+  "shell-version": ["3.12", "3.14", "3.16", "3.18"],
   "uuid": "window_buttons@biox.github.com",
   "name": "Window Buttons",
   "description": "Add minimize, maximize and close buttons to the panel. Originally by Josiah Messiah, maintained by m.c, then danielkza. See homepage for instructions.",
