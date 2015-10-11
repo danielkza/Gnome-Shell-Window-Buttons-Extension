@@ -5,5 +5,5 @@
   "description": "Add minimize, maximize and close buttons to the panel. Originally by Josiah Messiah, maintained by m.c, then danielkza. See homepage for instructions.",
   "url": "https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension",
   "settings-schema": "org.gnome.shell.extensions.window-buttons",
-  "dev-version": "2.5"
+  "dev-version": "2.6"
 }
