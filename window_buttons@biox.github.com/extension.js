@@ -607,9 +607,7 @@ WindowButtons.prototype = {
 
         // for any_window_maximized we additionaly have to be aware of max/unmax
         // events.
-        this._wmSignals.push(global.window_manager.connect('maximize',
-			Lang.bind(this, this._windowChanged)));
-        this._wmSignals.push(global.window_manager.connect('unmaximize',
+        this._wmSignals.push(global.window_manager.connect('size-change',
 			Lang.bind(this, this._windowChanged)));
 
         if (showbuttons === ShowButtonsWhen.ANY_WINDOW_MAXIMIZED) {
