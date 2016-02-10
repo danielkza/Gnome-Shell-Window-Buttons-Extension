@@ -609,6 +609,8 @@ WindowButtons.prototype = {
         // events.
         this._wmSignals.push(global.window_manager.connect('size-change',
 			Lang.bind(this, this._windowChanged)));
+	this._wmSignals.push(global.window_manager.connect('hide-tile-preview',
+			Lang.bind(this, this._windowChanged)));
 
         if (showbuttons === ShowButtonsWhen.ANY_WINDOW_MAXIMIZED) {
             return;
