@@ -1,17 +1,22 @@
-/*global log, global */ // <-- for jshint
-/* Window Button GNOME shell extension.
- * Copyright (C) 2011 Josiah Messiah (josiah.messiah@gmail.com)
- * Licence: GPLv3
- *
- * Contributors:
- * - Josiah Messiah <josiah.messiah@gmail.com>
- * - barravi <https://github.com/barravi>
- * - tiper <https://github.com/tiper>
- * - mathematical.coffee <mathematical.coffee@gmail.com>
- * - cjclavijo
- * - Daniel Miranda <danielkza2@gmail.com>
- * - Matteus Legat <https://github.com/MatLegat>
- */
+/*
+  Window Button GNOME shell extension.
+  Copyright (C) 2011 Josiah Messiah <josiah.messiah@gmail.com>
+            (C) 2014 mathematicalcoffee <mathematical.coffee@gmail.com>
+            (C) 2016 Daniel Miranda <danielkza2@gmail.com>
+            and other contributors (view AUTHORS file)
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, version 3.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 const Lang = imports.lang;
 const St = imports.gi.St;
