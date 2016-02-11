@@ -10,6 +10,7 @@
  * - mathematical.coffee <mathematical.coffee@gmail.com>
  * - cjclavijo
  * - Daniel Miranda <danielkza2@gmail.com>
+ * - Matteus Legat <https://github.com/MatLegat>
  */
 
 const Lang = imports.lang;

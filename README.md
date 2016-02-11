@@ -8,7 +8,7 @@ Supports custom button layouts and css theming!
     <td><img src="https://raw.github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/master/screenshot.png" alt="Screenshot" /></td>
   </tr>
   <tr>
-    <td>Current (06/Jun/2013) themes, top-to-bottom: Ambiance-Blue, Ambiance, default, Radiance, UniMetro-Black, UniMetro, Zukitwo-Dark, Zukitwo</td>
+    <td>Current (2016) themes, top-to-bottom: Ambiance-Blue, Ambiance, default, Radiance, UniMetro-Black, UniMetro, Zukitwo-Dark, Zukitwo</td>
   </tr>
 </table>
 
@@ -25,7 +25,7 @@ Install it from [extensions.gnome.org](https://extensions.gnome.org/extension/96
 
 If you wish to install manually, follow the steps below.
 
-### GNOME 3.12-3.16
+### GNOME 3.18
 
 Checkout the master branch, by doing:
 
@@ -40,6 +40,10 @@ ln -s "$PWD/window_buttons@biox.github.com" ~/.local/share/gnome-shell/extension
 # install
 gnome-shell-extension-tool -e window_buttons@biox.github.com 
 ```
+
+### GNOME 3.16
+
+Same as above, but checkout the `gnome-3.16` branch instead of master.
 
 ### Other GNOME versions
 
@@ -141,20 +145,29 @@ Also, feel free to add a file `ABOUT` with credits/information.
 
 Changelog
 ---------
+
+v14 on e.g.o (GNOME 3.18, dev-version 2.7)
+
+* Fixed missing signal handling for windows being un-tiled (#2 - thanks to MatLegat)
+
+v13 on e.g.o (GNOME 3.18)
+
+* GNOME 3.18 compatibility (#1, #2 - thanks to macleodsawyer and dffischer)
+
 v12 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 2.4)
 
 * fix compatibility with GNOME 3.16
 
 v11 on e.g.o (GNOME 3.8), dev-version 2.3.1:
 
-* fix bug where activities button would drift to the right upon lock/unlock (#18)
+* fix bug where activities button would drift to the right upon lock/unlock (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#18)
 
 v10 on e.g.o (GNOME 3.4, 3.6, 3.8), dev-version 2.3:
 
 * GNOME 3.8 support added
-* maximized windows that are minimized shouldn't count towards WINDOWS_MAXIMIZED (#9; deadalnix)
-* fixed phantom space when no buttons are showing (#10; deadalnix)
-* new themes UniMetro and UniMetro-Dark (jsjinga)
+* maximized windows that are minimized shouldn't count towards WINDOWS_MAXIMIZED (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#9 - thanks to deadalnix)
+* fixed phantom space when no buttons are showing (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#10 - thanks to deadalnix)
+* new themes UniMetro and UniMetro-Dark (thanks to jsjinga)
 
 v7/8/9 on e.g.o:
 
@@ -163,15 +176,15 @@ v7/8/9 on e.g.o:
 
 v5/v6 on e.g.o:
 
-* Buttons hide in the Overview (cfclavijo; #6)
-* New theme Ambiance-Blue (cfclavijo; #6)
+* Buttons hide in the Overview (cfclavijo; mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#6)
+* New theme Ambiance-Blue (cfclavijo; mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#6)
 
 v3/v4 on e.g.o:
 
-* Add hover style for the 'default' theme (#4)
-* Fix bug in `do-metacity` option preventing extension enablement on 3.4.1 (#3)
-* "Maximized" windows means fully-maximized (not half-maximized) (#1)
-* Added more options for when the buttons show (#2)
+* Add hover style for the 'default' theme (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#4)
+* Fix bug in `do-metacity` option preventing extension enablement on 3.4.1 (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#3)
+* "Maximized" windows means fully-maximized (not half-maximized) (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#1)
+* Added more options for when the buttons show (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#2)
 
 To-do
 -----
