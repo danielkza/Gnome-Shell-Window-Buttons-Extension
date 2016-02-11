@@ -586,10 +586,10 @@ WindowButtons.prototype = {
         this._wmSignals.push(global.window_manager.connect('switch-workspace',
             Lang.bind(this, this._windowChanged)));
         this._wmSignals.push(global.window_manager.connect('map',
-			Lang.bind(this, this._windowChanged)));
+            Lang.bind(this, this._windowChanged)));
         // note: 'destroy' needs a delay for .list_windows() report correctly
         this._wmSignals.push(global.window_manager.connect('destroy',
-			Lang.bind(this, function () {
+            Lang.bind(this, function () {
                 Mainloop.idle_add(Lang.bind(this, this._windowChanged));
             })));
         if (showbuttons === ShowButtonsWhen.WINDOWS) {
@@ -599,7 +599,7 @@ WindowButtons.prototype = {
         // for WINDOWS_VISIBLE we additionally need to listen to min (unmin
         // is covered by map)
         this._wmSignals.push(global.window_manager.connect('minimize',
-			Lang.bind(this, this._windowChanged)));
+            Lang.bind(this, this._windowChanged)));
 
         if (showbuttons === ShowButtonsWhen.WINDOWS_VISIBLE) {
             return;
@@ -608,9 +608,9 @@ WindowButtons.prototype = {
         // for any_window_maximized we additionaly have to be aware of max/unmax
         // events.
         this._wmSignals.push(global.window_manager.connect('size-change',
-			Lang.bind(this, this._windowChanged)));
-	this._wmSignals.push(global.window_manager.connect('hide-tile-preview',
-			Lang.bind(this, this._windowChanged)));
+            Lang.bind(this, this._windowChanged)));
+        this._wmSignals.push(global.window_manager.connect('hide-tile-preview',
+            Lang.bind(this, this._windowChanged)));
 
         if (showbuttons === ShowButtonsWhen.ANY_WINDOW_MAXIMIZED) {
             return;
