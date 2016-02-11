@@ -16,7 +16,7 @@ Configure with `gnome-shell-extension-prefs` or GNOME Tweak Tool.
 
 **Original Author**: biox (Josiah Messiah)  
 **Maintainer**: Daniel Miranda <danielkza2@gmail.com>  
-**Previous Maintainer**: mathematical.coffee <mathematical.coffee@gmail.com>  
+**Previous Maintainer**: mathematical.coffeee <mathematical.coffeee@gmail.com>  
 **Contributors**: [Many (thankyou!)](https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/contributors)
 
 Installation
@@ -148,11 +148,11 @@ Changelog
 
 v14 on e.g.o (GNOME 3.18, dev-version 2.7)
 
-* Fixed missing signal handling for windows being un-tiled (#2 - thanks to MatLegat)
+* Fixed missing signal handling for windows being un-tiled ([#3](//github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/issues/3) - thanks to MatLegat)
 
 v13 on e.g.o (GNOME 3.18)
 
-* GNOME 3.18 compatibility (#1, #2 - thanks to macleodsawyer and dffischer)
+* GNOME 3.18 compatibility ([#1](//github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/issues/1), [#2](//github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/issues/2) - thanks to macleodsawyer and dffischer)
 
 v12 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 2.4)
 
@@ -160,13 +160,13 @@ v12 on e.g.o (GNOME 3.16, fork by danielkza from mathematicalcofee, dev-version 
 
 v11 on e.g.o (GNOME 3.8), dev-version 2.3.1:
 
-* fix bug where activities button would drift to the right upon lock/unlock (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#18)
+* fix bug where activities button would drift to the right upon lock/unlock ([#18](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/18))
 
 v10 on e.g.o (GNOME 3.4, 3.6, 3.8), dev-version 2.3:
 
 * GNOME 3.8 support added
-* maximized windows that are minimized shouldn't count towards WINDOWS_MAXIMIZED (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#9 - thanks to deadalnix)
-* fixed phantom space when no buttons are showing (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#10 - thanks to deadalnix)
+* maximized windows that are minimized shouldn't count towards WINDOWS_MAXIMIZED ([#9](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/9) - thanks to deadalnix)
+* fixed phantom space when no buttons are showing ([#10](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/10) - thanks to deadalnix)
 * new themes UniMetro and UniMetro-Dark (thanks to jsjinga)
 
 v7/8/9 on e.g.o:
@@ -176,15 +176,15 @@ v7/8/9 on e.g.o:
 
 v5/v6 on e.g.o:
 
-* Buttons hide in the Overview (cfclavijo; mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#6)
-* New theme Ambiance-Blue (cfclavijo; mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#6)
+* Buttons hide in the Overview (cfclavijo; [#6](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/6))
+* New theme Ambiance-Blue (cfclavijo; [#6](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/6))
 
 v3/v4 on e.g.o:
 
-* Add hover style for the 'default' theme (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#4)
-* Fix bug in `do-metacity` option preventing extension enablement on 3.4.1 (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#3)
-* "Maximized" windows means fully-maximized (not half-maximized) (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#1)
-* Added more options for when the buttons show (mathematicalcoffe/Gnome-Shell-Window-Buttons-Extension#2)
+* Add hover style for the 'default' theme ([#4](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/4))
+* Fix bug in `do-metacity` option preventing extension enablement on 3.4.1 ([#3](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/3))
+* "Maximized" windows means fully-maximized (not half-maximized) ([#1](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/1))
+* Added more options for when the buttons show ([#2](//github.com/mathematicalcoffee/Gnome-Shell-Window-Buttons-Extension/issues/2))
 
 To-do
 -----
@@ -192,10 +192,3 @@ To-do
 - Add unfocused window support for better theming
 - Modify themes so that we handle drawing the icon and only the background image need be provided?
 - Moar themes!
-
-Version map
------------
-For 'version', see 'version' in metadata.json (this is the version of the extension as it appears/is planned for on extensions.gnome.org).
-
-- v1, v3: GNOME 3.2-compatible.
-- v2, v4: GNOME 3.4-compatible.
