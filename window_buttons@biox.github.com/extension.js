@@ -20,7 +20,6 @@
 
 const Lang = imports.lang;
 const St = imports.gi.St;
-const GConf = imports.gi.GConf;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -69,24 +68,16 @@ function warn(msg) {
     log("WARNING [Window Buttons]: " + msg);
 }
 
-/* Get the metacity button layout.
- * On GNOME 3.2, this can be found in GCONF key
- * /apps/metacity/general/button_layout. On GNOME 3.4, the gconf key does not
- * exist and you must use org.gnome.desktop.wm.preferences button-layout.
+/* Get the button layout.
  */
 function getMetaButtonLayout() {
-    // try Gio.Settings first. Cannot query non-existant schema in 3.2 or
-    // we'll get a segfault.
     let order;
     try {
-        // the following code will *only* work in GNOME 3.4 (schema_id property
+        // the following code will *only* work in GNOME 3.4+ (schema_id property
         // is 'schema' in GNOME 3.2):
         order = new Gio.Settings({schema_id: DCONF_META_PATH}).get_string(
             'button-layout');
     } catch (err) {
-        // GNOME 3.2
-        order = GConf.Client.get_default().get_string(
-                "/apps/metacity/general/button_layout");
     }
     return order;
 }
@@ -188,7 +179,6 @@ WindowButtons.prototype = {
             try {
                 theme = Gtk.Settings.get_default().gtk_theme_name;
             } catch(err) {
-                theme = Meta.prefs_get_theme();
             }
         } else {
             theme = this._settings.get_string(WA_THEME);

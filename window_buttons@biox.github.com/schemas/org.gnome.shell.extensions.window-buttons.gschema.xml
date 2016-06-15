@@ -3,7 +3,6 @@
   
   <enum id='org.gnome.shell.extensions.window-buttons.PinchType'>
     <value value='0' nick='custom'/>
-    <value value='1' nick='metacity'/>
     <value value='2' nick='gnome-shell'/>
   </enum>
 
@@ -44,8 +43,8 @@
     
     <key type="b" name="do-metacity">
       <default>true</default>
-      <summary>Match Metacity theme if possible</summary>
-      <description>Try to use the theme with the same name as the current metacity theme ('/apps/metacity/general/theme')</description>
+      <summary>Match theme if possible</summary>
+      <description>Try to use the current GTK theme)</description>
     </key>
 
     <key type="b" name="hide-in-overview">
