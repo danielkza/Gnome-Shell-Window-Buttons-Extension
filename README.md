@@ -146,6 +146,10 @@ Also, feel free to add a file `ABOUT` with credits/information.
 Changelog
 ---------
 
+v16 on e.g.o (GNOME 3.18, 3.20), dev-version 2.9
+
+* Fix failure on systems that don't include GConf bindings, such as Ubuntu 16.04 - GSettings has replaced it, and the code was obsolete.
+
 v15 on e.g.o (GNOME 3.18, 3.20), dev-version 2.8
 
 * Enable GNOME 3.20 support (thanks to dffischer)
