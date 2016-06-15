@@ -25,7 +25,7 @@ Install it from [extensions.gnome.org](https://extensions.gnome.org/extension/96
 
 If you wish to install manually, follow the steps below.
 
-### GNOME 3.18
+### GNOME 3.18, 3.20
 
 Checkout the master branch, by doing:
 
@@ -146,7 +146,11 @@ Also, feel free to add a file `ABOUT` with credits/information.
 Changelog
 ---------
 
-v14 on e.g.o (GNOME 3.18, dev-version 2.7)
+v15 on e.g.o (GNOME 3.18, 3.20), dev-version 2.8
+
+* Enable GNOME 3.20 support (thanks to dffischer)
+
+v14 on e.g.o (GNOME 3.18), dev-version 2.7
 
 * Fixed missing signal handling for windows being un-tiled ([#3](//github.com/danielkza/Gnome-Shell-Window-Buttons-Extension/issues/3) - thanks to MatLegat)
 
