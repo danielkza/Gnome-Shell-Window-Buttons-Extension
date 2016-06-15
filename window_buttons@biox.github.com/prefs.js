@@ -46,7 +46,6 @@ const WA_HIDEINOVERVIEW = 'hide-in-overview';
 // Keep enums in sync with GSettings schemas
 const PinchType = {
     CUSTOM: 0,
-    METACITY: 1,
     GNOME_SHELL: 2
 };
 
@@ -141,8 +140,7 @@ const WindowButtonsPrefsWidget = new GObject.Class({
         this._themeCombo = item;
 
         // doMetacity
-        this._doMetacity = this.addBoolean("Match Metacity theme if possible\n" +
-            " (/apps/metacity/general/theme, OVERRIDES above theme)",
+        this._doMetacity = this.addBoolean("Match theme if possible",
             WA_DO_METACITY);
         this._doMetacity.connect('notify::active', Lang.bind(this, function () {
             this._themeCombo.set_sensitive(!this._doMetacity.active);
