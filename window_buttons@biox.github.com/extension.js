@@ -244,7 +244,7 @@ WindowButtons.prototype = {
         let order = _ORDER_DEFAULT;
 
         order = getMetaButtonLayout();
-        
+
         /* if order is null because keys don't exist, get them from settings
          * (PinchType.CUSTOM) */
         if (pinch === PinchType.CUSTOM || !order || !order.length) {
@@ -315,7 +315,9 @@ WindowButtons.prototype = {
      * CURRENT_WINDOW_MAXIMIZED, ANY_WINDOW_MAXIMIZED, ANY_WINDOW_FOCUSED
      */
     _windowChanged: function () {
-        let workspace = global.screen.get_active_workspace(),
+        let display;
+        display = global.screen || global.workspace_manager;
+        let workspace = display.get_active_workspace(),
             windows = workspace.list_windows().filter(function (w) {
                 return w.get_window_type() !== Meta.WindowType.DESKTOP;
             }),
@@ -331,7 +333,7 @@ WindowButtons.prototype = {
             case ShowButtonsWhen.WINDOWS:
                 show = windows.length;
                 break;
-           
+
             // show whenever there are non-minimized windows
             case ShowButtonsWhen.WINDOWS_VISIBLE:
                 for (let i = 0; i < windows.length; ++i) {
@@ -344,7 +346,7 @@ WindowButtons.prototype = {
 
             // show iff current window is (fully) maximized
             case ShowButtonsWhen.CURRENT_WINDOW_MAXIMIZED:
-                let activeWindow = global.display.focus_window;
+                let activeWindow = global.display.focus_window || global.display.get_focus_window();
                 show = (activeWindow ?
                         activeWindow.get_maximized() === Meta.MaximizeFlags.BOTH :
                         false);
@@ -363,7 +365,7 @@ WindowButtons.prototype = {
 
             // show iff *any* window is focused.
             case ShowButtonsWhen.ANY_WINDOW_FOCUSED:
-                show = global.display.focus_window;
+                show = global.display.focus_window || global.display.get_focus_window();
                 break;
 
             // show all the time
@@ -405,8 +407,11 @@ WindowButtons.prototype = {
     // * the currently focused window.
     // * if all else fails, we return the uppermost window.
     _getWindowToControl: function () {
-        let win = global.display.focus_window,
-            workspace = global.screen.get_active_workspace(),
+        let display;
+        display = global.screen || global.workspace_manager;
+
+        let win = global.display.get_focus_window(),
+            workspace = display.get_active_workspace(),
             windows = workspace.list_windows().filter(function (w) {
                 return w.get_window_type() !== Meta.WindowType.DESKTOP;
             });
